@@ -1,13 +1,16 @@
-# 🔥 IncidentMind — A to Z Full Documentation (Hinglish)
+#  IncidentMind — A to Z Full Documentation (Hinglish)
 
 Yeh documentation aapko start se end tak samajhne mein help karegi ki **IncidentMind** actual mein hai kya, yeh kaam kaise karta hai, backend mein kya architecture chal raha hai, aur kaunse synthetic tasks hum explore kar rahe hain.
 
 ---
 
 ## 1. Project Kya Hai? (The Big Picture)
-**IncidentMind** ek RL-trained (Reinforcement Learning) LLM Agent hai jo production systems mein aane waale incidents (errors/crashes) ko ek **Senior SRE (Site Reliability Engineer)** ki tarah khud samajhta hai, debug karta hai, aur fix karta hai. 
+**IncidentMind** asal mein ek **Gym-style Training Environment** hai, jo OpenEnv hackathon ke liye banaya gaya hai. Hamara main focus LLM banana nahi hai, balki ek **Aisa Environment banana** hai jiske andar duniya ka koi bhi LLM agent SRE (Site Reliability Engineer) ki task perform karna seekh sake!
 
-Usually LLMs sirf "text" generate karte hain ya chatbot ki tarah sawal ka jawab dete hain. Lekin IncidentMind ek **Action-oriented Agent** hai jo ek PagerDuty alert receive karta hai, tools use karta hai, aur SRE pipeline ki tarah reasoning loop run karta hai—aur is process ko seekhne ke liye humne ise ek custom Gym-style environment mein train kiya hai (bilkul waise hi jaise ek AI game khelna seekhta hai).
+Yani humne "Game" (Environment) banaya hai. Jo SREAgent humne banaya hai, woh sirf ek "Baseline Demo" hai taaki judges ko dikha sakein ki humara environment effectively RL (Reinforcement Learning) models ko train karwa sakta hai.
+
+**"PagerDuty Alert Kaha Se Aayenge???"** 
+Aapko real PagerDuty account ya production system set up karne ki koi zaroorat nahi hai. Yeh 100% **Synthetic Environment** hai. Yani hamare `incident_generator.py` code mein humne aise scripts likhe hain jo **fake (simulated) PagerDuty JSON alerts** banate hain. Jab bhi episode start hota hai, environment apna ek internal fake SRE alert fekhta hai jo dikhne mein bilkul real production jaisa hota hai!
 
 ---
 
